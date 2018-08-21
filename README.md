@@ -2,7 +2,7 @@
 
 ox-md (org-mode to markdown) automatically replaces "---" (YAML separator) to "&#x2014;" (dash).
 
-This program resurrects "---". If you are annoying such ox-md  thoughtfulness, try this.
+This program resurrects "---". If you are annoying such ox-md's  thoughtfulness, try this.
 
 ## Code
 ```
