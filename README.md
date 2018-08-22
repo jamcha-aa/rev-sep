@@ -1,9 +1,10 @@
 # rev-sep
 
-This program modifies symbols of ox-md converted markdown files.
+This program modifies symbols of ox-md (org-mode to markdown) converted markdown files.
 
 #### Modified list
 - dash (&mdash;) to triple hyphens (---)
+  + This option might be useless when you add **#+OPTION: -:nil** to your preambles.
 - sidebar\\_label to sidebar_label
   + This option is especially for Docusaurus. 
 
@@ -23,7 +24,7 @@ This program modifies symbols of ox-md converted markdown files.
 
 ## Usage
 
-Add **#+OPTIONS: ^:{}** to the preambles of your org file.
+Add **#+OPTIONS: ^:{}** to your preambles.
 
 **M-x rev-sep** then input _markdown file_.
 
