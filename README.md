@@ -2,7 +2,7 @@
 
 This program modifies symbols of ox-md (org-mode to markdown) converted markdown files.
 
-#### Modified list
+#### Modification list
 - dash (&mdash;) to triple hyphens (---)
   + This option might be useless when you add **#+OPTION: -:nil** to your preambles.
 - sidebar\\_label to sidebar_label
