@@ -1,19 +1,29 @@
 # rev-sep
 
-ox-md (org-mode to markdown) automatically replaces "---" (YAML separator) to "&#x2014;" (dash).
+This program modifies symbols of ox-md converted markdown files.
 
-This program resurrects "---". If you are annoying such ox-md's  thoughtfulness, try this.
+#### Modified list
+- dash (&mdash;) to triple hyphens (---)
+- sidebar\\_label to sidebar_label
+  + This option is especially for Docusaurus. 
 
 ## Code
 ```
+(require 'xah-replace-pairs)
 (defun rev-sep (filename)
   (interactive "sInput Name: ")
   (with-temp-buffer
-    (insert (replace-regexp-in-string "\&\#x2014;" "---" (f-read-text filename)))
+    (insert (f-read-text filename))
+    (xah-replace-regexp-pairs-region (point-min) (point-max)
+                                     '(
+                                       ("\&\#x2014;" "---")
+                                       ("sidebar\\\\_label" "sidebar_label"))) 
     (write-file filename)))
 ```
 
 ## Usage
+
+Add **#+OPTIONS: ^:{}** to the preambles of your org file.
 
 **M-x rev-sep** then input _markdown file_.
 
